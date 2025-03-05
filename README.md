@@ -1,45 +1,171 @@
-# VapiBlocks Next14 Tailwind Starter
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) customized to display VapiBlocks UI components. 
+# 🎙️ Build Conversational Agents in Minutes
 
-The following pre-defined files are needed to make Orb demo work:
-- hooks/use-vapi.ts
-- components/orb.tsx
-- .env
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-**Edit the .env file** with your public key & assistantId from the [Vapi Dashboard]([vapi.ai/dashboard).
+A versatile, full-stack template for building AI-powered voice agents. This project combines Next.js, Tailwind CSS, and Vapi's conversational AI platform to create interactive voice experiences.
 
+## Features
+
+- **Next.js 14** - React framework with server-side rendering
+- **Tailwind CSS** - Utility-first styling for rapid UI development
+- **Vapi Integration** - Seamless AI voice agent capabilities
+- **Responsive Design** - Works on desktop and mobile devices
+- **Easy Customization** - Modular components and clear structure
+- **Docker Support** - Containerized deployment for any environment
+- **Environment Variables** - Secure configuration management
+
+## Prerequisites
+
+The following files are required for the voice agent to work:
+- `hooks/use-vapi.ts` - Custom hook for Vapi integration
+- `components/orb.tsx` - The voice interface component
+- `.env` - Environment configuration file (copy from `.env.example`)
+
+## Setup
+
+1. Clone this repository
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+3. Copy the example environment file:
+   ```bash
+   cp .env.example .env
+   ```
+4. Edit the `.env` file with your credentials from the [Vapi Dashboard](https://vapi.ai/dashboard)
+
+## Environment Configuration
+
+The `.env.example` file includes:
+
+```
+# Vapi API credentials
+# Get these from https://vapi.ai/dashboard
+NEXT_PUBLIC_VAPI_API_KEY=your_public_key_here
+NEXT_PUBLIC_VAPI_ASSISTANT_ID=your_assistant_id_here
+
+# Optional: Additional configuration
+# NEXT_PUBLIC_VAPI_SERVER_URL=https://api.vapi.ai
+# NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
+These environment variables are essential for connecting to the Vapi platform.
 
 ## Getting Started
 
-Edit the .env file then, run the development server:
+After setting up your environment variables, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Docker Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This template includes Docker support for easy deployment in any environment:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t ai-voice-agent .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 3000:3000 --env-file .env ai-voice-agent
+   ```
+
+   Alternatively, specify environment variables directly:
+   ```bash
+   docker run -p 3000:3000 -e NEXT_PUBLIC_VAPI_API_KEY=your_key -e NEXT_PUBLIC_VAPI_ASSISTANT_ID=your_id ai-voice-agent
+   ```
+
+3. Access your application at http://localhost:3000
+
+You can also use Docker Compose for a more streamlined setup:
+
+```bash
+docker-compose up
+```
+
+## Deployment Options
+
+This template can be deployed virtually anywhere:
+
+- **Vercel**: One-click deployment with the [Vercel Platform](https://vercel.com/new)
+- **Docker**: Deploy to any environment that supports Docker containers
+- **Kubernetes**: Scale your application with Kubernetes orchestration
+- **AWS/GCP/Azure**: Deploy to major cloud providers
+- **Self-hosted**: Run on your own infrastructure
+
+For production deployments, consider using environment variables through your hosting platform rather than .env files.
+
+## Customization
+
+This template is designed to be highly customizable:
+
+### Voice Agent Behavior
+- Modify the assistant settings in the Vapi Dashboard
+- Customize conversation flows and responses
+- Add domain-specific knowledge to your agent
+
+### UI/UX
+- Edit `app/page.tsx` to change the main page layout
+- Modify `components/orb.tsx` to customize the voice interface
+- Use Tailwind classes to style components to match your brand
+
+### Backend Integration
+- Connect to your own APIs or databases
+- Add authentication for personalized experiences
+- Implement webhooks for advanced functionality
+
+## Project Structure
+
+```
+├── app/                  # Next.js app directory
+│   └── page.tsx          # Main page component
+├── components/           # React components
+│   └── orb.tsx           # Voice interface component
+├── hooks/                # Custom React hooks
+│   └── use-vapi.ts       # Vapi integration hook
+├── public/               # Static assets
+├── styles/               # Global styles
+├── .env                  # Environment variables (create this)
+├── .env.example          # Example environment variables
+├── Dockerfile            # Docker configuration
+├── docker-compose.yml    # Docker Compose configuration
+└── ...                   # Configuration files
+```
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Vapi Documentation](https://docs.vapi.ai/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Security Note
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Make sure to:
+- Never commit your `.env` file to version control
+- Add `.env` to your `.gitignore` file
+- Use environment variables for all sensitive information
 
-## Deploy on Vercel
+## Troubleshooting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you encounter issues:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Verify your Vapi API key and Assistant ID are correct
+2. Check that your environment variables are properly loaded
+3. Ensure all dependencies are installed with `npm install`
+4. Clear your browser cache if you see stale data
+
+## Credits
+
+This template is based on work by [cameronking4](https://github.com/cameronking4) and enhanced with additional features and documentation.
