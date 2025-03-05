@@ -168,4 +168,16 @@ If you encounter issues:
 
 ## Credits
 
-This template is based on work by [cameronking4](https://github.com/cameronking4) and enhanced with additional features and documentation.
+This project was created by [MaxMLang](https://github.com/MaxMLang) and utilizes open source libraries based on work by [cameronking4](https://github.com/cameronking4).
+
+## License
+
+This project is licensed for **non-commercial use only**. 
+
+Key requirements:
+- You may use this software for personal, educational, or research purposes
+- Commercial use is prohibited without explicit permission
+- Attribution to the original author [MaxMLang](https://github.com/MaxMLang) must be maintained
+- See the [LICENSE](./LICENSE) file for complete terms
+
+For commercial licensing inquiries, please contact the copyright holder.
