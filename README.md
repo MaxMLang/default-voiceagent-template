@@ -8,6 +8,18 @@
 
 A versatile, full-stack template for building AI-powered voice agents. This project combines Next.js, Tailwind CSS, and Vapi's conversational AI platform to create interactive voice experiences.
 
+If you use this template for research purposes, please cite it as follows:
+
+```latex
+@misc{maxmlang_voiceagent,
+  author = {Max M. Lang},
+  title = {Build Conversational Agents in Minutes},
+  year = {2025},
+  url = {https://github.com/MaxMLang/default-voiceagent-template},
+  note = {Accessed [Date of access]}
+}
+```
+
 ## Demo
 
 
